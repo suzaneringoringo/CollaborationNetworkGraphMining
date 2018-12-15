@@ -37,4 +37,4 @@ colnames(exampleNodes2) <- "nodes"
 exampleNodes <- unique(rbind(exampleNodes1, exampleNodes2))
 
 exampleNet <- graph_from_data_frame(d=exampleEdges, vertices=exampleNodes, directed=F)
-plot(exampleNet, edge.width=0.1,	edge.arrow.width=0, vertex.size=2, vertex.label.cex=.5)
+plot(exampleNet, edge.width=0.1,	edge.arrow.width=0, vertex.size=3, vertex.label.cex=1)
