@@ -29,4 +29,12 @@ for (i in 1:length(edges$FromNodeId)) {
   }
 }
 
-exampleEdges <- data.frame()
+exampleEdges <- data.frame(exampleFrom, exampleTo)
+exampleNodes1 <- data.frame(unique(exampleEdges$exampleFrom))
+exampleNodes2 <- data.frame(unique(exampleEdges$exampleTo))
+colnames(exampleNodes1) <- "nodes"
+colnames(exampleNodes2) <- "nodes"
+exampleNodes <- unique(rbind(exampleNodes1, exampleNodes2))
+
+exampleNet <- graph_from_data_frame(d=exampleEdges, vertices=exampleNodes, directed=F)
+plot(exampleNet, edge.width=0.1,	edge.arrow.width=0, vertex.size=2, vertex.label.cex=.5)
